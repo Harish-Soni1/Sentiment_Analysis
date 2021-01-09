@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentiment Analysis</title>
 </head>
 <body>
-    <h1>Sentiment Analysis</h1>
-    <textarea style="margin: 0px; width: 350px; height: 150px;"></textarea>
-    <br><br>
-    <input type="button" value="Predict">
-    <br><br>
-    <h2>{{ prediction }}</h2>
+    <div class="container">
+        <div class="text">
+        <h2 class="font-family: Arial, Helvetica, sans-serif">Sentiment Analysis</h2></div>
+        <div class="inner-container">
+            <form action="http://localhost:5000/predict" method="post">
+                <br><br><br>
+                <textarea name="review" style="margin: 0px; width: 350px; height: 150px;"></textarea>
+                <br><br>
+                <button id="sub"    type="submit" value="Predict">Predict</button>
+                <br><br>
+                <h3><h3 class="font-family: Arial, Helvetica, sans-serif">{{ prediction }}</h3></h3>
+            </form>
+        </div>
+    </div>
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+        }
+
+        .container{
+            width: 600px;
+            height: 500px;
+            background-color: white;
+            position: relative;
+            left: 300px;
+            top: 30px;
+        }   
+
+        .inner-container{
+            background-color: coral;
+            width: 500px;
+            height: 400px;
+            
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }     
+
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        .text{
+            text-align: center;
+        }
+    </style>
 </body>
 </html>
